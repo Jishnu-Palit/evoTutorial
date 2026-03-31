@@ -1,0 +1,142 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* THEME VARIABLES */
+:root {
+  --bg: linear-gradient(135deg, #e0f7ff, #f8fbff);
+  --text: #1e293b;
+  --accent: #00aaff;
+  --glass: rgba(255,255,255,0.2);
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #0f172a, #020617);
+  --text: #e2e8f0;
+  --accent: #38bdf8;
+  --glass: rgba(30,41,59,0.4);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: 0.4s;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 25px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--accent);
+  z-index: 1000;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px 60px;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+/* GLASS BUTTON */
+.glass-btn {
+  background: var(--glass);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s;
+  backdrop-filter: blur(10px);
+}
+
+.glass-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 20px var(--accent);
+  transform: translateY(-3px);
+}
+
+/* TUTORIAL STEPS */
+#tutorial-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.step {
+  display: none;
+  text-align: center;
+  padding: 40px;
+  border-radius: 16px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--accent);
+  animation: slideUp 0.8s ease;
+}
+
+.step.active {
+  display: block;
+}
+
+/* CONTROLS */
+.controls {
+  text-align: center;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#evo-utility a {
+  text-decoration: none;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--accent);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+  from {opacity:0; transform: translateY(40px);}
+  to {opacity:1; transform: translateY(0);}
+}
